@@ -4,21 +4,19 @@ public class Example
 {
     public static void Main()
     {
-        string kluku, kluku2
+        int x, y, z, a, b, luku;
 
         Console.WriteLine("Syötä luku: ");
-        kluku = Console.ReadLine();
+        x = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Syötä toinen luku: ");
-        kluku2 = Console.ReadLine();
-
-        int luku;
+        y = Convert.ToInt32(Console.ReadLine());
         if (x > y)
         {
-            Console.WriteLine(y + " " + x);
+            Console.WriteLine(x + " " + y);
         }
         else
         {
-            Console.WriteLine(x + " " + y);
+            Console.WriteLine(y + " " + x);
         }
 
         Console.WriteLine("Syötä luku: ");
@@ -29,7 +27,6 @@ public class Example
         z = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Suurin luku: " + Math.Max(x, Math.Max(y, z)));
 
-        alku:
         Console.WriteLine("Syötä luku 0-9 välillä");
         luku = Convert.ToInt32(Console.ReadLine());
         switch (luku)
@@ -64,7 +61,7 @@ public class Example
                 Console.WriteLine("yhdeksän");
                 break;
             default: Console.WriteLine("väärin");
-                goto alku;
+                break;
         }
 
         Console.WriteLine("Syötä luku: ");
@@ -79,5 +76,28 @@ public class Example
         b = int.Parse(Console.ReadLine());
         Console.WriteLine("Suurin luku: " + Math.Max(x, Math.Max(y, Math.Max(z, Math.Max(a, b)))));
 
+        Console.WriteLine("Haluatko syöttää kokonaisluvun, double-luvun vai merkkijonon?");
+        string valinta = Console.ReadLine();
+        switch(valinta)
+        {
+            case "kokonaisluvun":
+                Console.WriteLine("syötä kokonaisluku: ");
+                int d = int.Parse(Console.ReadLine());
+                Console.WriteLine((d + 1));
+                break;
+            case "double-luvun":
+                Console.WriteLine("syötä double-luku: ");
+                double e = double.Parse(Console.ReadLine());
+                Console.WriteLine((e + 1));
+                break;
+            case "merkkijonon":
+                Console.WriteLine("Syötä merkkijono: ");
+                string f = Console.ReadLine();
+                Console.WriteLine(f + "*");
+                break;
+            default:
+                Console.WriteLine("väärin");
+                break;
+        }
     }
 }
